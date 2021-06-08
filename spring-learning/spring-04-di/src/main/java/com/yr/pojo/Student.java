@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Student {
     private String name;
-    private int age;
+    private Address address;
     private String[] books;
     private List<String> hobbies;
     private Map<String, String> card;
@@ -16,7 +16,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ", address=" + address +
                 ", books=" + Arrays.toString(books) +
                 ", hobbies=" + hobbies +
                 ", card=" + card +
@@ -34,12 +34,12 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String[] getBooks() {
