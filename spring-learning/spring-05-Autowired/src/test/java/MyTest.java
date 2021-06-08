@@ -27,4 +27,12 @@ public class MyTest {
         people.getCat().shout();
         people.getDog().bark();
     }
+
+    @Test
+    public void testAutowired(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("innoBeans.xml");
+        People people = context.getBean("people", People.class);
+        people.getCat().shout();
+        people.getDog().bark();
+    }
 }

@@ -1,9 +1,25 @@
 package com.yr.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import javax.annotation.Resource;
+
 public class People {
     private String name;
+
+//    @Autowired(required = false)
+//    @Qualifier(value = "cat222")
+//    private Cat cat;
+//
+//    @Autowired
+//    private Dog dog;
+
+    @Resource
     private Cat cat;
+    @Resource(name = "dog2")
     private Dog dog;
+
 
     public String getName() {
         return name;
