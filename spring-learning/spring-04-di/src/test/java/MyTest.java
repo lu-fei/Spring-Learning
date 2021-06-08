@@ -23,4 +23,16 @@ public class MyTest {
         System.out.println(user1);
         System.out.println(user2);
     }
+
+    @Test
+    public void testScope(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("userBeans.xml");
+        User user1 = context.getBean("user3", User.class);
+        User user2 = context.getBean("user3", User.class);
+
+        System.out.println(user1.hashCode());
+        System.out.println(user2.hashCode());
+
+        System.out.println(user1 == user2);
+    }
 }

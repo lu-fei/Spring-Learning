@@ -22,4 +22,12 @@
           c:_0="娜美"
           c:_1="17"/>
 
+
+    <bean id="user3" class="com.yr.pojo.User"
+          p:name="乌索普"
+          p:age="18"
+          scope="singleton"/>
+<!--          scope="prototype"/>-->
+
+
 </beans>
