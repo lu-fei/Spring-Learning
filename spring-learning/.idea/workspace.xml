@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a99be703-ad7b-42c9-84d8-941c3e7391bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="a99be703-ad7b-42c9-84d8-941c3e7391bf" name="Default Changelist" comment="DI beans">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/dao/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/dao/UserDaoMysqlImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/classes/com/yr/temp/HelloSpring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/test-classes/TestCreatUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-01-ioc1/target/test-classes/TestHelloSpring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-04-di/target/classes/com/yr/pojo/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-04-di/target/classes/com/yr/pojo/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-04-di/target/classes/com/yr/pojo/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-04-di/target/classes/com/yr/pojo/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-04-di/target/test-classes/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring-04-di/target/test-classes/MyTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +34,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\code\maven\maven_repository" />
-        <option name="mavenHome" value="E:\practical\codeSoftWare\IDEA\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
-        <option name="userSettingsFile" value="D:\code\java\environment\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../environment/javaEnvir/apache-maven-3.8.1" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -47,30 +63,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../alogorithm-code" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.14084506" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.MyTest.testNewStudent">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyTest.testNewUser">
     <configuration name="MyTest.testNewStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-04-di" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
       <option name="METHOD_NAME" value="testNewStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.testNewUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-04-di" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="testNewUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyTest.testNewUser" />
         <item itemvalue="JUnit.MyTest.testNewStudent" />
         <item itemvalue="JUnit.TestHelloSpring.testPrint" />
         <item itemvalue="JUnit.TestCreatUser.testGetUserBySpring" />
@@ -125,8 +141,17 @@
       <updated>1623053510672</updated>
       <workItem from="1623053513579" duration="79000" />
       <workItem from="1623053666594" duration="1035000" />
-      <workItem from="1623054727974" duration="4457000" />
+      <workItem from="1623054727974" duration="6666000" />
+      <workItem from="1623116520208" duration="4420000" />
     </task>
+    <task id="LOCAL-00001" summary="DI beans">
+      <created>1623134175373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623134175373</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,5 +175,7 @@
       <path value="$PROJECT_DIR$/../" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="DI beans" />
+    <option name="LAST_COMMIT_MESSAGE" value="DI beans" />
   </component>
 </project>
