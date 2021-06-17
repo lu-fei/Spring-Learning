@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 其实这里我们只干了三件事情：
+         1. 注册dataSource
+         2. 获取sqlSessionFactory
+         3. 根据sqlSessionFactory来获取sqlSession
+     -->
+
+    <!--1. dataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;
+                CharacterEncoding=UTF-8&amp;useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!-- 2.sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 这里我们用自己写的数据源，所以mybatis中不用写数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!--这里如果配置了mapper的路径，那么mybatis中就不用再配置了 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:com/yr/dao/*.xml"/>
+    </bean>
+
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- spring创建对象一共有三种方法：1.构造器创建；2.set注入；3.p/c命名空间
+         因为这里的sqlSession没有set方法，所以我们使用构造器创建对象-->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+
+    <!--注册mapper -->
+    <bean id="userMapper" class="com.yr.dao.UserMapperImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
+    <bean id="user" class="com.yr.pojo.User">
+        <property name="name" value="aaa"/>
+        <property name="id" value="123"/>
+    </bean>
+</beans>
