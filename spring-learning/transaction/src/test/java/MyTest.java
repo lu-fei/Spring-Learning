@@ -17,11 +17,5 @@ public class MyTest {
         }
     }
 
-    @Test
-    public void testGet(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
-        User user = context.getBean("user", User.class);
-        System.out.println(user.getName());
-        System.out.println(user.getId());
-    }
+
 }

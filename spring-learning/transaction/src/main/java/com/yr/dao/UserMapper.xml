@@ -6,8 +6,18 @@
 <!--namespace: 绑定一个对应的DAO/MAPPER接口-->
 <mapper namespace="com.yr.dao.UserMapper">
 
+    <!-- 接口里面添加一个方法，在对应的 mapper.xml 文件中就要修改 -->
     <select id="selectUsers" resultType="com.yr.pojo.User">
         select * from mybatis.user
     </select>
+
+    <!-- 针对这里可能会出现的中文乱码问题，要设置过滤器 -->
+    <insert id="add" parameterType="com.yr.pojo.User">
+        insert into mybatis.user(id, name, pwd) values(#{id}, #{name}, #{pwd})
+    </insert>
+
+    <delete id="delete" parameterType="com.yr.pojo.User">
+        delete from mybatis.user where id=#{id}
+    </delete>
 
 </mapper>
