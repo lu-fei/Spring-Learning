@@ -3,4 +3,4 @@
 out
 gen
 
-test/java/
+test/java/*
