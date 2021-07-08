@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 其实这里我们只干了三件事情：
+         1. 注册dataSource
+         2. 获取sqlSessionFactory
+         3. 根据sqlSessionFactory来获取sqlSession
+     -->
+
+    <!--1. dataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;
+                CharacterEncoding=UTF-8&amp;useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!-- 2.sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 这里我们用自己写的数据源，所以mybatis中不用写数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!--这里如果配置了mapper的路径，那么mybatis中就不用再配置了 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:com/yr/dao/*.xml"/>
+    </bean>
+
+    <!-- 3. sqlSession -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- spring创建对象一共有三种方法：1.构造器创建；2.set注入；3.p/c命名空间
+         因为这里的sqlSession没有set方法，所以我们使用构造器创建对象-->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!--注册mapper -->
+    <bean id="userMapper" class="com.yr.dao.UserMapperImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
+    <!-- 配置声明式事务 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 结合 AOP 实现事务的织入 -->
+    <!-- 配置事务通知 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- 给方法配置事务 -->
+        <!-- 配置事务的传播特性 new propagation(不写的话默认为 REQUIRED) -->
+        <tx:attributes>
+            <tx:method name="add"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置事务切入 -->
+    <aop:config>
+        <!-- 切入点 -->
+        <aop:pointcut id="txPointCut" expression="execution(* com.yr.dao.*.*(..))"/>
+        <!-- 切入通知(其实就是方法) -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+
+
+</beans>

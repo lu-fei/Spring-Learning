@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="cat" class="com.yr.pojo.Cat"/>-->
+<!--    <bean id="dog" class="com.yr.pojo.Dog"/>-->
+
+    <bean class="com.yr.pojo.Cat"/>
+    <bean class="com.yr.pojo.Dog"/>
+
+<!--    <bean id="people" class="com.yr.pojo.People"-->
+<!--          p:dog-ref="dog">-->
+<!--        <property name="cat" ref="cat"/>-->
+<!--        <property name="name" value="黎明"/>-->
+<!--    </bean>-->
+
+    <!-- byName 自动装配原理：会自动在容器上下文中查找和自己对象set方法后面的值对应的 bean id
+        注意：在 xml 文件中配置的bean对象，id一定要与对象set方法后对应的 beanId值相等。
+        包括大小写都要一样，否则这里会报错
+    -->
+    <bean id="people2" class="com.yr.pojo.People" autowire="byName">
+        <property name="name" value="凯多"/>
+    </bean>
+
+
+    <!-- byType: 它也会自动从上下文对象中去寻找，和自己对象属性类型相同的bean
+        注意：该属性的对象必须全局唯一，否则会报错-->
+    <bean id="people3" class="com.yr.pojo.People" autowire="byType">
+        <property name="name" value="bigMom"/>
+    </bean>
+
+
+</beans>
