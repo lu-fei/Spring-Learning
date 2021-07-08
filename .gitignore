@@ -3,7 +3,6 @@
 out
 gen
 
-*/*.idea
-*.idea/*
+test/*
 
 */test/*
