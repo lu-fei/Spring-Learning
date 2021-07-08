@@ -3,6 +3,4 @@
 out
 gen
 
-test/*
-
-*/test/*
+test/
