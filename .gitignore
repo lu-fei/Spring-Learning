@@ -3,4 +3,6 @@
 out
 gen
 
-test/java/test*
+# test/ 直接忽略test文件夹
+
+test*
