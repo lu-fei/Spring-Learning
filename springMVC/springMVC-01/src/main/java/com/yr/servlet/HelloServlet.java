@@ -1,6 +1,5 @@
-package com.yr.serverlet;
+package com.yr.servlet;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

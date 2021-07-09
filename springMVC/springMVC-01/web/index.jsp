@@ -11,6 +11,6 @@
     <title>$欢迎界面$</title>
   </head>
   <body>
-  $END$
+  Hello World ! springMVC_01
   </body>
 </html>
