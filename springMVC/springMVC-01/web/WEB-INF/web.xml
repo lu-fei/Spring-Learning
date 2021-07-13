@@ -6,12 +6,31 @@
 
     <servlet>
         <servlet-name>hello</servlet-name>
-        <servlet-class>com.yr.serverlet.HelloServlet</servlet-class>
+        <servlet-class>com.yr.servlet.HelloServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>hello2</servlet-name>
+        <servlet-class>com.yr.servlet.HelloServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello2</servlet-name>
+        <url-pattern>/abc</url-pattern>
+    </servlet-mapping>
+
+
+    <!--默认超时时间 -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+
+    <!--设置欢迎界面，默认为 web/index.jsp -->
+    <welcome-file-list>
+        <welcome-file>hello</welcome-file>
+    </welcome-file-list>
 
 </web-app>
