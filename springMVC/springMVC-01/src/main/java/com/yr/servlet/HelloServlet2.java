@@ -22,7 +22,8 @@ public class HelloServlet2 extends HttpServlet {
         out.println("<title>Hello World! HelloServletGG</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>Hello World HelloServlet!</h1>");
+        out.println("<h1>Hello World Hello Servlet!</h1>");
+        out.println("<h1>SpringMVC-01-HelloServlet2!</h1>");
         out.println("</body>");
         out.println("</html>");
 

@@ -23,4 +23,14 @@
     </servlet-mapping>
 
 
+    <!--默认超时时间 -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+
+    <!--设置欢迎界面，默认为 web/index.jsp -->
+    <welcome-file-list>
+        <welcome-file>hello</welcome-file>
+    </welcome-file-list>
+
 </web-app>
