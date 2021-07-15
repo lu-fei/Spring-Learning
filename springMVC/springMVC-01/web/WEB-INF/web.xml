@@ -30,7 +30,7 @@
 
     <!--设置欢迎界面，默认为 web/index.jsp -->
     <welcome-file-list>
-        <welcome-file>hello</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
