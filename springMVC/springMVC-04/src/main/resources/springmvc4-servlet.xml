@@ -11,16 +11,18 @@
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
 
     <!--添加 视图解析器
-            视图解析器:DispatcherServlet给他的ModelAndView -->
+        视图解析器:DispatcherServlet给他的ModelAndView -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--前缀 -->
         <property name="prefix" value="/WEB-INF/jsp/"/>
 
         <!--后缀 -->
         <property name="suffix" value=".jsp"/>
+
     </bean>
 
     <!--handler -->
-    <bean id="/helloController" class="com.yr.controller.HelloController"/>
+    <bean id="/helloController4" class="com.yr.controller.HelloController4"/>
+
 
 </beans>

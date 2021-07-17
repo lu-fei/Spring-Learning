@@ -5,19 +5,19 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>springMVC-02</servlet-name>
+        <servlet-name>springmvc3</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        
+
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc02-servlet.xml</param-value>
+            <param-value>classpath:springmvc3-servlet.xml</param-value>
         </init-param>
 
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>springMVC-02</servlet-name>
+        <servlet-name>springmvc3</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
