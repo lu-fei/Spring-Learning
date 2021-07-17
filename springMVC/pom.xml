@@ -14,6 +14,7 @@
         <module>springMVC-04</module>
         <module>springMVC-04</module>
         <module>springMVC-02</module>
+        <module>springMVC-05-annotation</module>
     </modules>
 
     <properties>
@@ -46,5 +47,25 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 </project>
