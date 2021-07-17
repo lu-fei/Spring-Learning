@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>springMVC-05-annotation</title>
   </head>
   <body>
-  $END$
+  Hello World! project: springMVC-05-annotation
   </body>
 </html>

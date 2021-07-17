@@ -6,9 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       https://www.springframework.org/schema/spring-context.xsd
+       https://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
-       https://www.springframwork.org/schema/mvc/spring-mvc.xsd">
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--自动扫包，让指定包下的注解生效，由IOC容器统一管理 -->
     <context:component-scan base-package="com.yr.controller"/>
@@ -38,6 +38,6 @@
     </bean>
 
     <!--handler -->
-    <bean id="/hello5" class="com.yr.controller.HelloController5"/>
+<!--    <bean id="/hello5" class="com.yr.controller.HelloController5"/>-->
 
 </beans>

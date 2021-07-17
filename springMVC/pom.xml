@@ -10,10 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>springMVC-01</module>
+        <module>springMVC-02</module>
         <module>springMVC-03</module>
         <module>springMVC-04</module>
-        <module>springMVC-04</module>
-        <module>springMVC-02</module>
         <module>springMVC-05-annotation</module>
     </modules>
 
@@ -56,6 +55,7 @@
                     <include>**/*.xml</include>
                     <include>**/*.properties</include>
                 </includes>
+                <filtering>false</filtering>
             </resource>
 
             <resource>
@@ -64,6 +64,7 @@
                     <include>**/*.xml</include>
                     <include>**/*.properties</include>
                 </includes>
+                <filtering>false</filtering>
             </resource>
         </resources>
     </build>
