@@ -14,6 +14,7 @@
         <module>springMVC-03</module>
         <module>springMVC-04</module>
         <module>springMVC-05-annotation</module>
+        <module>springMVC-06-summary</module>
     </modules>
 
     <properties>
