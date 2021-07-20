@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <!--1. DispatcherServlet -->
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!--一定要注意，我们这里加载的是总的配置文件 -->
+            <param-value>classpath:applicationContext.xml</param-value>
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <!--这里要写 /，否则.jsp文件会走dispatcherServlet，导致404异常 -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <!--2. 编写过滤文件 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <!--这里要写 /* 否则页面的乱码解决不了 -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    
+    <!--3. 设置session连接时间 -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+    
+</web-app>
