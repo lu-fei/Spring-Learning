@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "book")
-public class HelloController {
+@RequestMapping(value = "/book")
+public class BookController {
 
     // controller 层调 service 层
 

@@ -24,7 +24,7 @@
         <!--关闭连接后不自动提交 -->
         <property name="autoCommitOnClose" value="false"/>
         <!--获取连接超时时间 -->
-        <property name="checkoutTimeout" value="1000"/>
+        <property name="checkoutTimeout" value="10000"/>
         <!--获取连接失败重试次数 -->
         <property name="acquireRetryAttempts" value="2"/>
 
@@ -34,7 +34,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--绑定mybatis的配置文件 -->
-        <property name="configLocation" value="mybatis-config.xml"/>
+        <property name="configLocation" value="/mybatis-config.xml"/>
     </bean>
 
     <!--4. 配置dao接口扫描包，动态的实现了dao接口可以注入到spring容器中 -->
