@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- dataSource: 使用 spring 提供的源替换 Mybatis 的配置  c3p0, dbcp, druid.
+      我们这里使用 spring 提供的源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/jdbcstudy?useUnicode=true&amp;
+                CharacterEncoding=UTF-8&amp;useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!-- sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 绑定 mybatis 配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:com/yr/dao/*.xml"/>
+    </bean>
+
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- 只能使用构造器注入qlSessionFactory，因为它没有 set 方法 -->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+
+    <!-- 现在开始管理对象。在之前使用 mybatis 的时候，我们在测试类中还得先创建 sqlSession，然后获取 mapper，
+     然后才会去调用对象的各种方法，现在所有的对象都交由 Spring 容器管理，我们只需要在这里配置一下就好-->
+    <bean id="usersMapper2" class="com.yr.dao.UsersMapperImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+</beans>
