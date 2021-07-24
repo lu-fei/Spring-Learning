@@ -28,19 +28,5 @@ public class HelloServlet extends HttpServlet{
         doGet(req, resp);
     }
 
-
-    public static void main(String[] args) {
-        int a = 1;
-        int b = 2;
-        int c = a + b;
-        int d = a + b + c;
-        int e = c + d;
-        int f = d + e;
-
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println(e);
-        System.out.println(f);
-    }
 }
 
