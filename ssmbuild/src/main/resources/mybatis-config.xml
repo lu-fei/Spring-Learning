@@ -9,7 +9,7 @@
     </typeAliases>
 
     <mappers>
-        <mapper resource="com.yr.dao.BookMapper.xml"/>
+        <mapper resource="com.yr.dao.BooksMapper.xml"/>
     </mappers>
 
 </configuration>

@@ -34,7 +34,15 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--绑定mybatis的配置文件 -->
-        <property name="configLocation" value="/mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+
+        <!--绑定实体类的位置 -->
+        <property name="mapperLocations" value="classpath:com/yr/dao/*.xml"/>
+    </bean>
+
+    <bean id="sqlSessionTemplate1" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- 只能使用构造器注入qlSessionFactory，因为它没有 set 方法 -->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
     <!--4. 配置dao接口扫描包，动态的实现了dao接口可以注入到spring容器中 -->
@@ -43,6 +51,10 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--要扫描的dao包 -->
         <property name="basePackage" value="com.yr.dao"/>
+    </bean>
+
+    <bean id="booksMapper2" class="com.yr.dao.BooksMapperImpl">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate1"/>
     </bean>
 
 </beans>

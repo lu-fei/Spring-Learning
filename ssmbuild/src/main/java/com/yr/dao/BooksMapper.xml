@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.yr.dao.BookMapper">
+<mapper namespace="com.yr.dao.BooksMapper">
 
     <!-- 增加一本书 -->
     <insert id="addBook" parameterType="Books">
@@ -27,7 +27,7 @@
     </update>
 
     <!--根据ID查询，返回一本书 -->
-    <select id="queryBookById" resultType="Books">
+    <select id="queryBookById" parameterType="_int" resultType="Books">
         select * from ssmbuild.books
         where bookID = #{bookID}
     </select>

@@ -1,0 +1,5 @@
+com\yr\controller\BookController.class
+com\yr\dao\BooksMapper.class
+com\yr\pojo\Books.class
+com\yr\service\BookServiceImpl.class
+com\yr\service\BookService.class
