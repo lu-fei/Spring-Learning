@@ -9,7 +9,9 @@
     </typeAliases>
 
     <mappers>
-        <mapper resource="com.yr.dao.BooksMapper.xml"/>
+        <!--这里出的问题，到底是用 . 还是用 / ？ -->
+<!--        <mapper resource="com.yr.dao.BooksMapper.xml"/>-->
+
     </mappers>
 
 </configuration>

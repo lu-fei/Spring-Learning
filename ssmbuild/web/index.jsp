@@ -6,5 +6,11 @@
 </head>
 <body>
 Hello SSMBuild!
+
+<h3>
+  <a href="${pageContext.request.contextPath}/book/allbook">进入书籍界面</a>
+</h3>
+
+
 </body>
 </html>

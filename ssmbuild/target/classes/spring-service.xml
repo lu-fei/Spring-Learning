@@ -4,14 +4,15 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd
-       http://mybatis.org/schema/mybatis-spring
-       http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--1. 扫描service 下的包 -->
     <context:component-scan base-package="com.yr.service"/>
 
     <!--2. 将我们所有的业务类，注册到spring，可以通过配置，也可以通过注解是实现 -->
     <bean id="bookServiceImpl" class="com.yr.service.BookServiceImpl">
+        <!--这里的name对应 setBooksMapper 方法！ eg. 如果写的是 setBookMapper，那么这里应该是 bookMapper -->
         <property name="booksMapper" ref="booksMapper2"/>
     </bean>
 

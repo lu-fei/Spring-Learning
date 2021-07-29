@@ -9,7 +9,7 @@ public class BookServiceImpl implements BookService{
     //调用dao层的操作，设置一个set接口，方便Spring管理
     private BooksMapper booksMapper;
 
-    public void setBookMapper(BooksMapper booksMapper) {
+    public void setBooksMapper(BooksMapper booksMapper) {
         this.booksMapper = booksMapper;
     }
 

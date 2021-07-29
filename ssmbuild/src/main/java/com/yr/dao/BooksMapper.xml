@@ -15,7 +15,7 @@
        对于基本数据类型而言，如果我们这里写int，数据库识别的是 Integer，所以我们要写 _int
        但是java可以自动拆装箱，所以我们这里只写int也可以
     -->
-    <delete id="deleteBookId" parameterType="_int">
+    <delete id="deleteBookById" parameterType="_int">
         delete from ssmbuild.books where bookID = #{bookID}
     </delete>
 

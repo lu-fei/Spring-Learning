@@ -8,6 +8,5 @@
 
 <h3>展示所有的书籍</h3>
 
-<a href=${pageContext.request.contextPath}/book/allbook>显示</a>
 
 </body>
